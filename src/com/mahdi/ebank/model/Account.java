@@ -1,4 +1,4 @@
-package mahdi.ebank.model;
+package com.mahdi.ebank.model;
 
 import java.math.BigDecimal;
 import java.util.Objects;

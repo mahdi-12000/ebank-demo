@@ -1,4 +1,4 @@
-package mahdi.ebank.service;
+package com.mahdi.ebank.service;
 
 import com.mahdi.ebank.exception.InsufficientBalanceException;
 import com.mahdi.ebank.model.Account;
