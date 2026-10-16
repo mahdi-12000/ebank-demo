@@ -1,4 +1,4 @@
-package mahdi.ebank;
+package com.mahdi.ebank;
 
 import com.mahdi.ebank.model.Account;
 import com.mahdi.ebank.model.Transaction;
