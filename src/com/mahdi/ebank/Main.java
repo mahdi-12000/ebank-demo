@@ -16,7 +16,7 @@ public class Main {
         // Création de deux comptes (id et solde initial)
         Account account1 = new Account(1L, new BigDecimal("1000.00"));
         Account account2 = new Account(2L, new BigDecimal("250.00"));
-
+         
         System.out.println("Soldes avant virement :");
         System.out.println("Compte 1 (id=" + account1.getId() + ") : " + account1.getBalance());
         System.out.println("Compte 2 (id=" + account2.getId() + ") : " + account2.getBalance());
