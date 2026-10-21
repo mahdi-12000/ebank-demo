@@ -1,0 +1,34 @@
+name: "Copilot Setup Steps"
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+      - 'src/**/*.java'
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+      - 'src/**/*.java'
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Compile Java sources
+        run: |
+          mkdir -p out
+          javac -d out $(find src -name '*.java')
+      - name: Run transfer service test
+        run: java -cp out com.mahdi.ebank.service.TransferServiceTest
+      - name: Run eBank demo
+        run: java -cp out com.mahdi.ebank.Main
